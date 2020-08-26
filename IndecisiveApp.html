@@ -2,34 +2,37 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indecisive App</title>
     <link rel="stylesheet" href="css/style.css">
-    
-  
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
     <header>
 
     </header>
-    <div class="container">
+    <div>
         <h1>My First Heading</h1>
         <h2>Put your choices in the hands of a computer.</h2>
 
+        
 
         <button id="decide">What should i do?</button><br>
-        <button id="remove">Remove All</button><br>
-
-        <ul id="todolist">
-            <li><input><button>Add Option</button></li>
-
-
-        </ul>
+        <input id="addActivity" placeholder="Add new task"><button onclick="addItem()"><i class="fas fa-plus-square"></i></button>
+       
+        <button id="remove" class="remove"> <i class="fas fa-trash"></i></button><br>
         
+        <div class="main">
+            <ul id="todolist" class="todolist">
+
+            </ul>
+        </div>
+
     
     </div>
     <script src="script/main.js"></script>
+    <script src="https://kit.fontawesome.com/b76bec1805.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
