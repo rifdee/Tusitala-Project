@@ -13,8 +13,6 @@ body{
 
 .container{
     width: 600px;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     margin: auto;
     font-family: rubik, sans-serif;
@@ -39,17 +37,37 @@ input[type="text"]{
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     flex-grow: 1;
+    text-transform: capitalize;
 }
 
-button{
+.addbtn{
     font-size: 1.5rem;
     background-color:transparent;
-    outline: 0;
     border:none;
     color: grey;
-
-    border-radius: 5px;
     
+}
+
+.clearAll{
+    font-size: 1.2rem;
+    background-color:white;
+    border:none;
+    color: grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    justify-content: end;
+
+}
+
+.decideBtn{
+    font-size: 1.2rem;
+    background-color:white;
+    border:none;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 button:hover{
@@ -65,10 +83,11 @@ ul{
 li{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid white;
     padding: 15px 0;
     font-size: 1rem;
     color: black;
+    text-transform: capitalize;
 }
 i{
     pointer-events: none;
@@ -81,7 +100,7 @@ i{
 .clearAll{
     display: flex;
     justify-content: flex-end;
-    padding: 10px 3px;
+    padding: 10px;
     cursor: pointer;
     font-size:0.9rem;
 }
