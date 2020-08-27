@@ -9,25 +9,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body class="container">
-    <header>
 
-    </header>
-    <div>
+    <div class="main">
         <h1>My First Heading</h1>
         <h2>Put your choices in the hands of a computer.</h2>
-
+        <button id="decide" >What should i do?</button>
         
-
-        <button id="decide">What should i do?</button><br>
-        <input id="addActivity" placeholder="Add new task"><button onclick="addItem()"><i class="fas fa-plus-square"></i></button>
-       
-        <button id="remove" class="remove"> <i class="fas fa-trash"></i></button><br>
+        <button id="clearAll" class="clearAll">Remove all</i></button>
         
-        <div class="main">
-            <ul id="todolist" class="todolist">
+        <div class="todoList">
+            <ul>
 
             </ul>
         </div>
+        <form>
+            <input placeholder="Add new task" type="text">
+            <button type="submit"><i class="fas fa-plus-square"></i></button>
+            </form>
 
     
     </div>

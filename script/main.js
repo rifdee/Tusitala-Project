@@ -1,10 +1,24 @@
+document.querySelector('form').addEventListener('submit', handleSubmitForm);
+document.getElementById('clearAll').addEventListener('click', handleClearAll);
+document.querySelector('ul').addEventListener('click', handleDelete);
+document.getElementById('decide').addEventListener('click', decideTodo);
 
-let btnAdd = document.getElementById ('add');
-let btnDecide = document.getElementById ('decide');
-let result;
-document.querySelector('form').addEventListener('submit', handleSubmitForm)
 
-let activity = ['Swimming', 'Watch Movie', 'Wash car', 'Work!'];
+let activity = [];
+
+function handleSubmitForm(e) {
+    e.preventDefault();
+    let input = document.querySelector('input');
+    activity.push(input.value);
+    if (input.value != '')
+        addTodo(input.value);
+    input.value = '';
+}
+
+function decideTodo(){
+    let index = getRandomNumber(0, activity.length-1);
+    alert(activity[index])
+}
 
 function getRandomNumber(min, max) {
     let step1 = max - min + 1;
@@ -14,40 +28,45 @@ function getRandomNumber(min, max) {
     return result;
 }
 
-btnDecide.addEventListener('click', () => {
-    let index = getRandomNumber(0, activity.length-1);
-    alert(activity[index])
-});
 
-//btnAdd.addEventListener('click', addItem());
-
-function addItem() {
-    var ul = document.getElementById("todolist");
-    var candidate = document.getElementById("addActivity");
-    var li = document.createElement("li");
-    li.setAttribute('id', candidate.value);
-    li.appendChild(document.createTextNode(candidate.value));
-    ul.appendChild(li);
-    //ul.innerHTML = '<li><input><button>Add Option</button></li>';
-}
-
-function handleSubmitForm(e){
-    e.preventDefulat();
-    let input = document.querySelector('input');
-    if(input.value != '')
-        addTodo(inout.value);
-    input.value = ';'
-}
-
-function addtodo(){
+function addTodo(todo) {
     let ul = document.querySelector('ul');
-    let li = document.querySelector('li');
-
+    let li = document.createElement('li');
     li.innerHTML = `
-        <span class="todo-item">${todo}</span>
-        <button class="deleteButton"><i class="fas fa-trash"></i></button>
-    `
-
+        <span class="todo-item" name="${todo}">${todo}</span>
+        <button name="deleteButton" ><i class="fas fa-trash"></i></button>
+    `;
     li.classList.add('todo-list-item');
+    //li.id.add('todo-list-item');
     ul.appendChild(li);
+}
+
+function handleClearAll(e) {
+    activity.splice(0, activity.length);
+    document.querySelector('ul').innerHTML = '';
+}
+
+function handleDelete(e) {
+    
+   
+    if (e.target.name == 'deleteButton')
+        deleteTodo(e);
+}
+
+function deleteTodo(e) {
+    let item = e.target.parentNode;
+
+    let input = document.querySelector('span');
+
+    
+
+    let i = activity.indexOf(input.value);
+
+    activity.splice(i, 1);
+    
+    item.addEventListener('transitionend', function () {
+        item.remove(); 
+    });
+
+    item.classList.add('todo-list-item-fall');
 }
