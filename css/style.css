@@ -48,31 +48,29 @@ input[type="text"]{
     
 }
 
-.clearAll{
-    font-size: 1.2rem;
-    background-color:white;
-    border:none;
-    color: grey;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    justify-content: end;
 
-}
 
 .decideBtn{
     font-size: 1.2rem;
-    background-color:white;
-    border:none;
+    background-color:transparent;
+    border: 2px white solid;
     color: black;
-    border-radius: 5px;
+    border-radius: 50px;
     padding: 10px;
     cursor: pointer;
 }
 
-button:hover{
-    color: rgb(44, 186, 221);
+.decideBtn:hover{
+    color: whitesmoke;
     background-color: dimgray;
+    cursor: pointer;
+}
+
+.addbtn:hover{
+    color: whitesmoke;
+    background-color: dimgray;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 ul{
@@ -100,9 +98,22 @@ i{
 .clearAll{
     display: flex;
     justify-content: flex-end;
+    
     padding: 10px;
+    margin-top: 20px;
+    justify-content: end;
     cursor: pointer;
     font-size:0.9rem;
+    background-color: transparent;
+    border: 2px white solid;
+    color: white;
+    border-radius: 50px;
+}
+
+.deleteBtn{
+    background-color: transparent;
+    border:none;
+
 }
 
 .clearAll:hover{
