@@ -33,11 +33,10 @@ function addTodo(todo) {
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
     li.innerHTML = `
-        <span class="todo-item" name="${todo}">${todo}</span>
+        <span class="todo-item" >${todo}</span>
         <button name="deleteButton" class="deleteBtn" ><i class="fas fa-trash"></i></button>
     `;
     li.classList.add('todo-list-item');
-    //li.id.add('todo-list-item');
     ul.appendChild(li);
 }
 
@@ -56,12 +55,9 @@ function handleDelete(e) {
 function deleteTodo(e) {
     let item = e.target.parentNode;
 
-    let input = document.querySelector('span');
-
-    
-
+    let input = document.querySelector('li').innerHTML;
     let i = activity.indexOf(input.value);
-
+    
     activity.splice(i, 1);
     
     item.addEventListener('transitionend', function () {
